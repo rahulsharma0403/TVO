@@ -1,6 +1,7 @@
 # TVO
 Cypress Project
 I have used Cypress framework along with Javascript basics.
+Node modules will not be included in the Git hub, so request you to download node modules.
 
 The code is available in /e2e/spec.js file.
 Multi browser testing: I have added multiple browsers in package.json file. We can execute the command to  run the tests:      npm run test:chrome/edge/firefox
