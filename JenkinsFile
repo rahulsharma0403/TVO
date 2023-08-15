@@ -1,0 +1,34 @@
+pipeline {
+  
+    stages {
+        stage('Install Dependencies') { 
+            steps {
+                echo "Running build ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                sh 'npm ci'
+                sh 'npm run cy:verify'
+            }
+        }
+      
+
+            parallel {
+                stage('Tester A') {
+                    steps {
+                        echo "Running build ${env.BUILD_ID} on Tester A"
+                        sh "NO_COLOR=1 xvfb-run -a npx cypress run --record --spec 'cypress/e2e/TestA/*.js' "
+                    }
+                }
+
+                stage('Tester B') {
+                    steps {
+                        echo "Running build ${env.BUILD_ID} on Tester B"
+                       sh "NO_COLOR=1 xvfb-run -a npx cypress run --record --spec 'cypress/e2e/TestB/*.js' "
+                    }
+                }
+
+                }
+
+            }
+           
+        }
+    }
+}
