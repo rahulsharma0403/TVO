@@ -1,0 +1,20 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:Chrome": "cypress run --browser Chrome",
+    "test:Firefox": "cypress run --browser Firefox",
+    "test:Edge": "cypress run --browser Edge"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.17.3"
+  },
+  "dependencies": {
+    "cypress-gitlab-parallel-runner": "^1.1.3"
+  }
+}
