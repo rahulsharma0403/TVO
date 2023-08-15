@@ -11,7 +11,7 @@ class URL {
   }
 }
 
-describe('template spec', () => {
+describe('Coding test', () => {
   // Exception handling code. If it would have been multiple e2e files, then it would have been in /support/e2e.js
 
   Cypress.on("fail", (err, runnable) => {
